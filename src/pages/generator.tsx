@@ -203,14 +203,14 @@ const GeneratorPage = () => {
   };
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-b from-stone-50 via-purple-50/40 to-white pt-24 pb-16">
+    <div className="relative min-h-screen overflow-x-clip overflow-y-hidden bg-linear-to-b from-stone-50 via-purple-50/40 to-white pt-24 pb-16">
 
-        <div className="pointer-events-none absolute inset-0 -z-0">
+      <div className="pointer-events-none absolute inset-0 z-0">
         <div className="absolute -top-24 -left-16 h-72 w-72 rounded-full bg-orange-200/40 blur-3xl" />
         <div className="absolute top-1/3 -right-20 h-80 w-80 rounded-full bg-purple-200/40 blur-3xl" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: -16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -233,7 +233,7 @@ const GeneratorPage = () => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.45, delay: 0.1 }}
-            className="lg:col-span-2"
+            className="min-w-0 lg:col-span-2"
           >
             <form
               onSubmit={handleGenerateBook}
@@ -435,9 +435,9 @@ const GeneratorPage = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.45, delay: 0.12 }}
-            className="lg:col-span-1"
+            className="min-w-0 lg:col-span-1"
           >
-            <div className="sticky top-32 rounded-3xl border border-stone-200 bg-white/95 p-6 shadow-[0_12px_50px_-34px_rgba(41,37,36,0.55)]">
+            <div className="sticky top-32 rounded-3xl border border-stone-200 bg-white/95 p-5 shadow-[0_12px_50px_-34px_rgba(41,37,36,0.55)] sm:p-6">
               <div className="mb-5 flex items-center gap-2">
                 <History className="h-5 w-5 text-purple-700" />
                 <h3 className="text-xl font-bold text-stone-900">History</h3>
