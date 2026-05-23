@@ -56,7 +56,7 @@ const GeneratorPage = () => {
   // Customization options
   const [model, setModel] = useState('llama-3.1-8b-instruct');
   const [speedLength, setSpeedLength] = useState('balanced');
-  const [mode, setMode] = useState('creative');
+  const [mode, setMode] = useState('casual');
   const [theme, setTheme] = useState('professional');
   const [connectModel, setConnectModel] = useState('default');
   const [showUnauthorizedModal, setShowUnauthorizedModal] = useState(false);
@@ -121,6 +121,7 @@ const GeneratorPage = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           prompt: trimmedPrompt,
+          writing_mode: mode,
           length_priority: normalizeLengthPriority(speedLength),
           ...(filenameInput.trim() ? { filename: stripPdfExtension(filenameInput) } : {}),
           ...(CLIENT_VERSION ? { version: CLIENT_VERSION } : {}),
@@ -169,7 +170,7 @@ const GeneratorPage = () => {
         filename: finalFilename,
         objectUrl,
         success: true,
-        message: `Your book has been created with ${mode} writing style using the ${theme} theme.`,
+        message: `Your book has been created with ${mode.charAt(0).toUpperCase() + mode.slice(1)} writing style using the ${theme} theme.`,
         title: finalTitle,
         generationTime,
       });
@@ -303,9 +304,10 @@ const GeneratorPage = () => {
                     onChange={(e) => setMode(e.target.value)}
                     className="w-full rounded-xl border border-stone-200 bg-stone-50 px-4 py-2.5 text-sm text-stone-800 outline-none transition focus:border-purple-600 focus:bg-white focus:ring-2 focus:ring-purple-100"
                   >
-                    <option value="research">Research (Formal)</option>
-                    <option value="technical">Technical (Code Examples)</option>
+                    <option value="casual">Casual (Default)</option>
+                    <option value="professional">Professional (Formal)</option>
                     <option value="creative">Creative (Storytelling)</option>
+                    <option value="technical">Technical (Code Examples)</option>
                   </select>
                 </div>
               </div>

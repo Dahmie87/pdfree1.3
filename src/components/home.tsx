@@ -10,6 +10,7 @@ import {
   Lock, 
   Globe, 
 } from 'lucide-react';
+import pdfLogo from '../assets/pdf-logo.webp';
 
 const API_BASE = import.meta.env.VITE_PDFREE_API_BASE_URL ?? 'http://localhost:8000';
 
@@ -130,12 +131,11 @@ const PDFreeLanding = () => {
       }`}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           <div className="flex items-center gap-2 group cursor-pointer">
-            <div className="bg-purple-600 p-1.5 rounded-lg group-hover:rotate-12 transition-transform">
-              <FileText className="text-white w-6 h-6" />
-            </div>
-            <span className="text-xl font-bold tracking-tight text-slate-900">
-              PDFree
-            </span>
+            <img
+              src={pdfLogo}
+              alt="PDFree"
+              className="h-20 w-auto transition-transform group-hover:scale-[1.02]"
+            />
           </div>
 
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
@@ -468,10 +468,7 @@ const PDFreeLanding = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
             <div className="col-span-1 md:col-span-1">
               <div className="flex items-center gap-2 mb-6">
-                <div className="bg-purple-600 p-1.5 rounded-lg">
-                  <FileText className="text-white w-5 h-5" />
-                </div>
-                <span className="text-xl font-bold text-slate-900 uppercase tracking-tighter">PDFree</span>
+                <img src={pdfLogo} alt="PDFree" className="h-20 w-auto" />
               </div>
               <p className="text-slate-500 text-sm leading-relaxed mb-6">
                 Making the internet a little better, one free document at a time.
@@ -526,7 +523,7 @@ const PDFreeLanding = () => {
       {isMenuOpen && (
         <div className="fixed inset-0 bg-white z-100 p-6 md:hidden animate-fade-in-up">
           <div className="flex justify-between items-center mb-12">
-            <span className="font-bold text-xl uppercase">PDFree</span>
+            <img src={pdfLogo} alt="PDFree" className="h-16 w-auto" />
             <button onClick={() => setIsMenuOpen(false)}><X /></button>
           </div>
           <div className="flex flex-col gap-8 text-2xl font-bold">
