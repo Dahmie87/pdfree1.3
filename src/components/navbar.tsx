@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
-import pdfLogo from '../assets/pdf-logo.webp';
+import pdfLogo from '../assets/pdfree.png';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,13 +23,13 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="w-full border-b border-slate-200 bg-white">
+    <nav className="w-full bg-white">
       <div className="max-w-7xl mx-auto px-4 py-1 flex justify-between items-center">
         <Link to="/" className="flex items-center gap-2 group cursor-pointer">
           <img
             src={pdfLogo}
             alt="PDFree"
-            className="h-14 w-auto transition-transform group-hover:scale-[1.02]"
+            className="h-30 w-auto transition-transform group-hover:scale-[1.02]"
           />
         </Link>
 

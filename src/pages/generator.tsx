@@ -284,8 +284,8 @@ const GeneratorPage = () => {
                   >
                     <option value="llama-3.1-8b-instruct">llama-3.1-8b-instruct</option>
                     <option value="gpt-5.5">gpt-5.5 ★</option>
-                    <option value="claude-new">claude-new ★</option>
-                    <option value="claude-alt">claude-alt ★</option>
+                    <option value="claude-new">Opus 4.0 <span className="text-gold-500">★</span></option>
+                    <option value="claude-alt">Sonnet 3.5 ★</option>
                     <option value="gpt-4o-mini">gpt-4o-mini</option>
                     <option value="gemini-2.0-flash">gemini-2.0-flash</option>
                     <option value="deepseek-chat">deepseek-chat</option>
