@@ -24,12 +24,12 @@ const Navbar = () => {
 
   return (
     <nav className="w-full bg-white">
-      <div className="max-w-7xl mx-auto px-4 py-1 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
         <Link to="/" className="flex items-center gap-2 group cursor-pointer">
           <img
             src={pdfLogo}
             alt="PDFree"
-            className="h-30 w-auto transition-transform group-hover:scale-[1.02]"
+            className="h-20 w-auto transition-transform group-hover:scale-[1.02]"
           />
         </Link>
 
